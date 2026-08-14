@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7c3aed">
+  <title>Operação Felipe | IDEATHON FPP 2026</title>
+  <meta name="description" content="Uma torcida especial para o Felipe no IDEATHON FPP 2026 — Corações Conectados.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💜</text></svg>">
+
+<style>
+/* =========================================================
+   GALERIA OFICIAL — TODAS AS FOTOS VISÍVEIS
+   ========================================================= */
+.masonry-gallery .gallery-card {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+.masonry-gallery .photo-placeholder {
+  height: 100%;
+  min-height: 250px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.masonry-gallery .photo-placeholder.has-image {
+  border: 0;
+}
+.masonry-gallery .photo-placeholder.has-image .placeholder-content {
+  display: none;
+}
+@media (max-width: 600px) {
+  .masonry-gallery .gallery-card {
+    min-height: 300px;
+  }
+}
+</style>
+
+<script>
+/* Carrega TODAS as fotos da segunda galeria assim que a página abre. */
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".masonry-gallery .gallery-card[data-image]").forEach(function (card) {
+    const path = card.getAttribute("data-image");
+    const photo = card.querySelector(".photo-placeholder");
+    if (!photo || !path) return;
+
+    const img = new Image();
+
+    img.onload = function () {
+      photo.style.backgroundImage = 'url("' + path + '")';
+      photo.classList.add("has-image");
+    };
+
+    img.onerror = function () {
+      console.warn("Foto não encontrada:", path);
+    };
+
+    img.src = path;
+  });
+});
+</script>
+
+</head>
+<body>
+  <div id="confetti-layer" aria-hidden="true"></div>
+
+  <div class="intro-screen" id="intro">
+    <div class="intro-glow"></div>
+    <div class="intro-content">
+      <div class="mini-badge">🚨 OPERAÇÃO ESPECIAL 🚨</div>
+      <div class="intro-heart">💜</div>
+      <h1>Uma torcida<br><span>para o Felipe.</span></h1>
+      <p>Porque participar do IDEATHON é importante.<br>Mas ter uma torcida completamente parcial também.</p>
+      <button class="primary-btn" id="enterBtn">ENTRAR NA TORCIDA <span>→</span></button>
+      <small>IDEATHON FPP 2026 · Corações Conectados</small>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio">💜 <span>Operação Felipe</span></a>
+    <nav>
+      <a href="#felipe">Felipe</a>
+      <a href="#galeria">Fotos</a>
+      <a href="#torcida">Torcida</a>
+      <a href="#mensagem">Mensagem</a>
+    </nav>
+    <button class="heart-btn" id="heartBtn" aria-label="Enviar energia positiva">♡</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">IDEATHON FPP 2026 · CORAÇÕES CONECTADOS</div>
+        <h2>FELIPE,<br><em>VAI LÁ E ARRASA.</em> 💜</h2>
+        <p class="hero-text">Se depender dessa torcida, você já entrou no evento com vantagem competitiva.</p>
+        <div class="hero-actions">
+          <a class="primary-btn" href="#galeria">ver o arquivo do Felipe ↓</a>
+          <button class="secondary-btn" id="cheerBtn">📣 AGITAR A TORCIDA</button>
+        </div>
+      </div>
+
+      <div class="hero-photo-card reveal">
+        <div class="tape"></div>
+        <div class="photo-placeholder hero-photo" data-photo="felipe-principal.png">
+          <div class="placeholder-content">
+            <span>📸</span>
+            <strong>FOTO DO FELIPE</strong>
+          </div>
+        </div>
+        <div class="sticker sticker-heart">💜</div>
+        <div class="sticker sticker-star">✦</div>
+        <p>participante oficial da torcida mais suspeita do IDEATHON</p>
+      </div>
+    </section>
+
+    <section class="stats-strip">
+      <div><strong>100%</strong><span>torcida</span></div>
+      <div><strong>∞</strong><span>energia positiva</span></div>
+      <div><strong>🐶</strong><span>Nu qui ditos apoiando</span></div>
+      <div><strong>📣</strong><span>pompoms prontos</span></div>
+    </section>
+
+    <section class="section about" id="felipe">
+      <div class="section-heading reveal">
+        <span class="section-kicker">01 · ARQUIVO CONFIDENCIAL</span>
+        <h3>O Felipe em seu habitat natural.</h3>
+        <p>Alguns registros importantes antes que ele vá conquistar o IDEATHON.</p>
+      </div>
+
+      <div class="polaroid-grid">
+        <article class="polaroid rotate-left reveal">
+          <div class="photo-placeholder small-photo" data-photo="felipe-01.png">
+            <div class="placeholder-content"><span>📸</span><small>felipe-01.png</small></div>
+          </div>
+          <p>Registro nº 001</p>
+          <span>Felipe sendo inexplicavelmente bonito.</span>
+        </article>
+
+        <article class="polaroid rotate-right reveal">
+          <div class="photo-placeholder small-photo" data-photo="felipe-02.png">
+            <div class="placeholder-content"><span>📸</span><small>felipe-02.png</small></div>
+          </div>
+          <p>Registro nº 002</p>
+          <span>Provavelmente pensando em alguma coisa muito inteligente.</span>
+        </article>
+
+        <article class="polaroid rotate-left reveal">
+          <div class="photo-placeholder small-photo" data-photo="felipe-03.png">
+            <div class="placeholder-content"><span>📸</span><small>felipe-03.png</small></div>
+          </div>
+          <p>Registro nº 003</p>
+          <span>Momento em que a torcida decidiu: é esse mesmo.</span>
+        </article>
+
+        <article class="polaroid rotate-right reveal">
+          <div class="photo-placeholder small-photo" data-photo="felipe-04.png">
+            <div class="placeholder-content"><span>📸</span><small>felipe-04.png</small></div>
+          </div>
+          <p>Registro nº 004</p>
+          <span>100% comprovado: ele fica bem em qualquer foto.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="section-heading reveal">
+        <span class="section-kicker">02 · GALERIA OFICIAL</span>
+        <h3>Porque uma foto só seria injusto.</h3>
+        <p>Troque os placeholders pelas fotos favoritas dele — ou pelas suas favoritas dele. 👀</p>
+      </div>
+
+      <div class="masonry-gallery">
+        <button class="gallery-card tall" data-image="fotos/felipe-05.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-05.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-06.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-06.png</small></div></div>
+        </button>
+        <button class="gallery-card wide reveal" data-image="fotos/felipe-07.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-07.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-08.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-08.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-10.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-10.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-11.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-11.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-12.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-12.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-13.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-13.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-14.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-14.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-15.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-15.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-16.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-16.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-17.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-17.png</small></div></div>
+        </button>
+        <button class="gallery-card" data-image="fotos/felipe-18.png" aria-label="Abrir foto do Felipe">
+          <div class="photo-placeholder"><div class="placeholder-content"><span>📸</span><small>felipe-18.png</small></div></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="dog-section" id="torcida">
+      <div class="section dog-inner">
+        <div class="section-heading light reveal">
+          <span class="section-kicker">03 · COMITÊ NU QUIDITINHO</span>
+          <h3>Os mofadinhos também estão torcendo.</h3>
+          <p>Eles não sabem o que é um IDEATHON. Mas sabem que o Felipe precisa vencer.</p>
+        </div>
+
+        <div class="dog-grid">
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog.gif"><div class="placeholder-content"><span>🐶</span><small>dog-01.png</small></div></div>
+            <h4>Felipe</h4><span>Nu Qui Dito Supremo</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-01.png"><div class="placeholder-content"><span>🐶</span><small>dog-01.png</small></div></div>
+            <h4>Bob</h4><span>Coordenador de Latidos Motivacionais</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-02.png"><div class="placeholder-content"><span>🐕</span><small>dog-02.png</small></div></div>
+            <h4>Pompom</h4><span>Diretora de Apoio Emocional</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-03.png"><div class="placeholder-content"><span>🐩</span><small>dog-03.png</small></div></div>
+            <h4>Mel</h4><span>Especialista em Olhares de Aprovação</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-04.png"><div class="placeholder-content"><span>🐕‍🦺</span><small>dog-04.png</small></div></div>
+            <h4>Thor</h4><span>Segurança da Delegação</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-05.png"><div class="placeholder-content"><span>🐕‍🦺</span><small>dog-05.png</small></div></div>
+            <h4>Rex</h4><span>Chefe da Segurança</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-06.png"><div class="placeholder-content"><span>🐕‍🦺</span><small>dog-06.png</small></div></div>
+            <h4>Mel</h4><span>Responsável pelo Café</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-07.png"><div class="placeholder-content"><span>🐕‍🦺</span><small>dog-07.png</small></div></div>
+            <h4>Bob</h4><span>Fiscal da Delegação</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-08.png"><div class="placeholder-content"><span>🐕‍🦺</span><small>dog-08.png</small></div></div>
+            <h4>Luna</h4><span>Coordenadora do Descanso</span>
+          </article>
+          <article class="dog-card reveal">
+            <div class="dog-photo photo-placeholder" data-photo="dog-09.png"><div class="placeholder-content"><span>🐕‍🦺</span><small>dog-09.png</small></div></div>
+            <h4>Toby</h4><span>Diretor de Brincadeiras</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cheer-section">
+      <div class="section cheer-inner">
+        <div class="pom pom-left">🎀</div>
+        <div class="pom pom-right">🎀</div>
+        <div class="cheer-content reveal">
+          <span class="section-kicker">04 · CENTRAL DE POMPOMS</span>
+          <h3>VAI, FELIPE! 📣</h3>
+          <p>O nível de torcida está oficialmente fora de controle.</p>
+          <div class="cheer-meter"><span id="meterFill"></span></div>
+          <strong id="meterText">TORCIDA: 10000%</strong>
+          <button class="primary-btn big" id="pomBtn">AGITAR OS POMPOMS 💜</button>
+          <p class="random-message" id="randomMessage">Clique no botão. A torcida está esperando.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dashboard">
+      <div class="section-heading reveal">
+        <span class="section-kicker">05 · PAINEL DA MISSÃO</span>
+        <h3>Status da Operação Felipe.</h3>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dash-card reveal"><span>🧠</span><p>Criatividade</p><strong>145%</strong><div class="bar"><i style="width:97%"></i></div></div>
+        <div class="dash-card reveal"><span>💜</span><p>Torcida</p><strong>10000%</strong><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="dash-card reveal"><span>🐶</span><p>Apoio nu qui dito</p><strong>∞%</strong><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="dash-card reveal"><span>🏆</span><p>Chance de arrasar</p><strong>10000%</strong><div class="bar"><i style="width:100%"></i></div></div>
+      </div>
+    </section>
+
+    <section class="message-section" id="mensagem">
+      <div class="section message-inner">
+        <div class="message-card reveal">
+          <div class="message-decoration">💌</div>
+          <span class="section-kicker">06 · DE ALGUÉM QUE ESTÁ TORCENDO POR VOCÊ</span>
+          <<h3>Agora falando sério...</h3>
+
+          <p>
+            No meio de toda essa bagunça, eu queria que você lembrasse de uma coisa:
+            você é uma pessoa muito especial. E não estou falando só porque você é
+            absurdamente lindo - apesar de ser difícil ignorar isso - mas porque existe
+            uma coisa em você que faz quem está por perto querer te ver bem e torcer
+            por você.
+          </p>
+
+          <p>
+            Você é querido, é talentoso, é muito mais capaz do que às vezes talvez
+            perceba, e merece viver coisas incríveis. Merece conhecer lugares novos,
+            colecionar histórias, se divertir, errar, acertar, aprender e aproveitar
+            cada segundo dessa experiência.
+          </p>
+
+          <p>
+            Então vai lá e seja você. Aproveita tudo, dá o seu melhor, ri bastante,
+            registra os momentos e, por favor, não esquece o quanto você é incrível.
+            Eu espero que essa seja só mais uma das muitas coisas boas que ainda vão
+            acontecer na sua vida.
+          </p>
+
+          <p>
+            Como escreveu Fernando Pessoa: <em>“Tudo vale a pena se a alma não é pequena.”</em>
+          </p>
+
+          <p class="signature">
+            E eu vou estar daqui, mesmo de longe, torcendo muito por você. 💜
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-section">
+      <div class="final-glow"></div>
+      <div class="final-content reveal">
+        <div class="big-heart">💜</div>
+        <span class="section-kicker">MISSÃO FINAL</span>
+        <h3>Você é aurudo, Felipe.</h3>
+        <p>Os nu qui ditos já estão mobilizados.<br>Os pompoms estão prontos.<br>A torcida está oficialmente conectada.</p>
+        <button class="primary-btn big" id="finalBtn">ENVIAR ENERGIA POSITIVA ✨</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>feito com 💜, um pouco de parcialidade e muitos nu qui ditinhos</span>
+    <span>IDEATHON FPP 2026 · Corações Conectados</span>
+  </footer>
+
+  <div class="modal" id="imageModal" aria-hidden="true">
+    <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+    <img id="modalImage" src="" alt="Foto ampliada">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
