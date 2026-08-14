@@ -43,7 +43,6 @@
 </style>
 
 <script>
-/* Carrega TODAS as fotos da segunda galeria assim que a página abre. */
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".masonry-gallery .gallery-card[data-image]").forEach(function (card) {
     const path = card.getAttribute("data-image");
@@ -68,6 +67,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </head>
 <body>
+  <div class="goodnight-overlay" id="goodnightOverlay" aria-hidden="false">
+    <div class="goodnight-backdrop"></div>
+    <div class="goodnight-card">
+      <button class="goodnight-close" id="goodnightClose" aria-label="Fechar">×</button>
+      <div class="goodnight-sparkles">✦ 💜 ✦</div>
+      <span class="goodnight-kicker">MENSAGEM DA TORCIDA · 🌙</span>
+      <h2>Boa noite,<br><em>nu qui dito mais lindo.</em> 🐶</h2>
+      <div class="goodnight-gif-wrap">
+        <img src="fotos/boa-noite.png" alt="GIF fofo de boa noite" class="goodnight-gif" onerror="this.style.display='none';document.getElementById('goodnightGifFallback').style.display='grid';">
+        <div class="goodnight-gif-fallback" id="goodnightGifFallback">🐶💤💜</div>
+      </div>
+      <p class="goodnight-text">Agora vai descansar, porque até os nu qui ditos mais lindos precisam recarregar as energias. 🥺💜</p>
+      <div class="spotify-player">
+      <iframe
+        data-testid="embed-iframe"
+        src="https://open.spotify.com/embed/track/2DFi8rwHcVkTTgu7PULhtI?utm_source=generator"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+      <button class="goodnight-btn" id="goodnightEnter">DORME BEM, FELIPE 💜</button>
+      <small class="music-note">A música começa após o clique, para funcionar nos navegadores que bloqueiam autoplay.</small>
+    </div>
+  </div>
+
   <div id="confetti-layer" aria-hidden="true"></div>
 
   <div class="intro-screen" id="intro">

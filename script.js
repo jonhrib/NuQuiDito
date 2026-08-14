@@ -118,3 +118,8 @@ window.addEventListener("load", () => {
     document.querySelectorAll(".hero .reveal").forEach(el => el.classList.add("visible"));
   }, 300);
 });
+
+const goodnightOverlay=document.getElementById("goodnightOverlay"),goodnightClose=document.getElementById("goodnightClose"),goodnightEnter=document.getElementById("goodnightEnter"),musicPlay=document.getElementById("musicPlay"),goodnightAudio=document.getElementById("goodnightAudio"),musicStatus=document.getElementById("musicStatus"),musicDisc=document.getElementById("musicDisc");
+function closeGoodnight(){goodnightOverlay.classList.add("hidden");goodnightOverlay.setAttribute("aria-hidden","true");if(goodnightAudio)goodnightAudio.pause()}
+function toggleGoodnightMusic(){if(!goodnightAudio||!goodnightAudio.src||!goodnightAudio.querySelector("source").src){musicStatus.textContent="Adicione uma URL de MP3 no index.html 🎵";return}if(goodnightAudio.paused){goodnightAudio.play().then(()=>{musicPlay.textContent="Ⅱ";musicStatus.textContent="Tocando para o nu qui dito 💜";musicDisc.classList.add("playing")}).catch(()=>musicStatus.textContent="Clique novamente para iniciar a música.")}else{goodnightAudio.pause();musicPlay.textContent="▶";musicStatus.textContent="Música pausada";musicDisc.classList.remove("playing")}}
+goodnightClose.addEventListener("click",closeGoodnight);goodnightEnter.addEventListener("click",()=>{confetti(22);closeGoodnight()});musicPlay.addEventListener("click",toggleGoodnightMusic);goodnightOverlay.addEventListener("click",e=>{if(e.target===goodnightOverlay||e.target.classList.contains("goodnight-backdrop"))closeGoodnight()});
