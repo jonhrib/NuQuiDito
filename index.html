@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💜</text></svg>">
 
 <style>
@@ -125,8 +125,31 @@ document.addEventListener("DOMContentLoaded", function () {
     <section class="hero section" id="inicio">
       <div class="hero-copy reveal">
         <div class="eyebrow">IDEATHON FPP 2026 · CORAÇÕES CONECTADOS</div>
-        <h2>FELIPE,<br><em>VAI LÁ E ARRASA.</em> 💜</h2>
-        <p class="hero-text">Se depender dessa torcida, você já entrou no evento com vantagem competitiva.</p>
+        <div class="congrats-hero">
+          <div id="trophyDrop" class="trophy-drop" aria-hidden="true">
+            🏆
+          </div>
+          <div class="congrats-confetti" aria-hidden="true">
+            <span>✨</span><span>💜</span><span>🏆</span><span>✨</span><span>💗</span>
+          </div>
+          <span class="congrats-kicker">🏆 RESULTADO OFICIAL 🏆</span>
+          <h2>
+            <span class="congrats-small">FELIPE, VOCÊ CONSEGUIU!</span>
+            <strong>2º LUGAR</strong>
+            <em>NO IDEATHON. ✨</em>
+          </h2>
+          <div class="heart-place">
+            <span>💜</span>
+            <b>1º LUGAR</b>
+            <span>NO MEU CORAÇÃO.</span>
+          </div>
+          <p class="hero-text">Eu sabia que você ia arrasar. E agora temos um troféu para provar. 🥹✨</p>
+        </div>
+        <div class="victory-badge">
+          <span>🏆 2º LUGAR NO IDEATHON</span>
+          <strong>1º LUGAR NO MEU CORAÇÃO. 💜</strong>
+          <small>Parabéns, Felipe! Eu sabia que você ia arrasar. 🥹✨</small>
+        </div>
         <div class="hero-actions">
           <a class="primary-btn" href="#galeria">ver o arquivo do Felipe ↓</a>
           <button class="secondary-btn" id="cheerBtn">📣 AGITAR A TORCIDA</button>
@@ -391,6 +414,6 @@ document.addEventListener("DOMContentLoaded", function () {
     <img id="modalImage" src="" alt="Foto ampliada">
   </div>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

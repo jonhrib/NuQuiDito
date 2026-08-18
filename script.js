@@ -5,10 +5,52 @@ window.addEventListener("load", () => {
 document.body.classList.add("locked");
 
 const intro = document.getElementById("intro");
-document.getElementById("enterBtn").addEventListener("click", () => {
+const enterBtn = document.getElementById("enterBtn");
+
+enterBtn.addEventListener("click", () => {
+
+  // Fecha a tela inicial
   intro.classList.add("hide");
   document.body.classList.remove("locked");
+
+  // Confetes normais da entrada
   setTimeout(() => confetti(35), 350);
+
+  // Espera a página de parabéns aparecer
+  setTimeout(() => {
+
+    const trophy = document.getElementById("trophyDrop");
+    const heroCopy = document.querySelector(".hero-copy");
+
+    if (!trophy) return;
+
+    // Garante que a área de parabéns esteja visível
+    if (heroCopy) {
+      heroCopy.classList.add("visible");
+    }
+
+    // Agora o troféu começa a despencar
+    trophy.classList.add("falling");
+
+    // Quando chegar ao centro do parabéns
+    setTimeout(() => {
+
+      confetti(80);
+
+      trophy.classList.remove("falling");
+      trophy.classList.add("land");
+
+    }, 1800);
+
+    // Remove depois da animação
+    setTimeout(() => {
+      if (trophy.parentNode) {
+        trophy.remove();
+      }
+    }, 2550);
+
+  }, 900);
+
 });
 
 function confetti(amount = 20) {
@@ -119,7 +161,39 @@ window.addEventListener("load", () => {
   }, 300);
 });
 
-const goodnightOverlay=document.getElementById("goodnightOverlay"),goodnightClose=document.getElementById("goodnightClose"),goodnightEnter=document.getElementById("goodnightEnter"),musicPlay=document.getElementById("musicPlay"),goodnightAudio=document.getElementById("goodnightAudio"),musicStatus=document.getElementById("musicStatus"),musicDisc=document.getElementById("musicDisc");
-function closeGoodnight(){goodnightOverlay.classList.add("hidden");goodnightOverlay.setAttribute("aria-hidden","true");if(goodnightAudio)goodnightAudio.pause()}
-function toggleGoodnightMusic(){if(!goodnightAudio||!goodnightAudio.src||!goodnightAudio.querySelector("source").src){musicStatus.textContent="Adicione uma URL de MP3 no index.html 🎵";return}if(goodnightAudio.paused){goodnightAudio.play().then(()=>{musicPlay.textContent="Ⅱ";musicStatus.textContent="Tocando para o nu qui dito 💜";musicDisc.classList.add("playing")}).catch(()=>musicStatus.textContent="Clique novamente para iniciar a música.")}else{goodnightAudio.pause();musicPlay.textContent="▶";musicStatus.textContent="Música pausada";musicDisc.classList.remove("playing")}}
-goodnightClose.addEventListener("click",closeGoodnight);goodnightEnter.addEventListener("click",()=>{confetti(22);closeGoodnight()});musicPlay.addEventListener("click",toggleGoodnightMusic);goodnightOverlay.addEventListener("click",e=>{if(e.target===goodnightOverlay||e.target.classList.contains("goodnight-backdrop"))closeGoodnight()});
+/* =========================================================
+   BOA NOITE
+   ========================================================= */
+
+const goodnightOverlay = document.getElementById("goodnightOverlay");
+const goodnightClose = document.getElementById("goodnightClose");
+const goodnightEnter = document.getElementById("goodnightEnter");
+
+function closeGoodnight() {
+  if (!goodnightOverlay) return;
+
+  goodnightOverlay.classList.add("hidden");
+  goodnightOverlay.setAttribute("aria-hidden", "true");
+}
+
+if (goodnightClose) {
+  goodnightClose.addEventListener("click", closeGoodnight);
+}
+
+if (goodnightEnter) {
+  goodnightEnter.addEventListener("click", () => {
+    confetti(22);
+    closeGoodnight();
+  });
+}
+
+if (goodnightOverlay) {
+  goodnightOverlay.addEventListener("click", (e) => {
+    if (
+      e.target === goodnightOverlay ||
+      e.target.classList.contains("goodnight-backdrop")
+    ) {
+      closeGoodnight();
+    }
+  });
+}
